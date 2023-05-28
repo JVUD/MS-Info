@@ -13,7 +13,7 @@ percent = int(battery.percent)
 gpu_mem_cmd = r'(((Get-Counter "\GPU Process Memory(*)\Local Usage").CounterSamples | where CookedValue).CookedValue | measure -sum).sum'
 gpu_usage_cmd = r'(((Get-Counter "\GPU Engine(*engtype_3D)\Utilization Percentage").CounterSamples | where CookedValue).CookedValue | measure -sum).sum'
 
-
+#RRun command
 def run_command(command):
     val = sp.run(['powershell', '-Command', command], capture_output=True).stdout.decode("ascii")
 
